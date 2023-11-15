@@ -1,2 +1,14 @@
-<h1>Restaurants#index</h1>
-<p>Find me in app/views/restaurants/index.html.erb</p>
+<h1 class="mb-5">All restaurants</h1>
+
+<div class="d-flex flex-wrap gap-4" >
+  <% @restaurants.each do |r| %>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title text-center"><%= r.name %></h5>
+        <p class="card-text text-center"><%= r.address %></p>
+        <p class="badge bg-secondary rounded-pill w-100"><%= r.category %></p>
+        <%= link_to "See details", restaurant_path(r), class: "btn btn-dark w-100"%>
+      </div>
+    </div>
+  <% end %>
+</div>
