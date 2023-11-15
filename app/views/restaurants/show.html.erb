@@ -3,3 +3,8 @@
 <h5 class="mb-5">Address: <%= @restaurant.address %></h5>
 
 <h5 class="mb-5">Category: <%= @restaurant.category %></h5>
+
+<div class="col-6">
+  <%= link_to 'Add a review', new_restaurant_review_path(@restaurant), class: "btn btn-outline-dark mb-3" %>
+  <%= render 'reviews', reviews: @reviews %>
+</div>
